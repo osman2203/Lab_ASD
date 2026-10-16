@@ -54,7 +54,19 @@ int main(){
 				printf("\n\n");
 				break;
 			case '7':
-				
+				printf("\n Podaj element do usuniecia: ");
+				if (scanf_s(" %d", &x) == 0)
+					exit(1);
+				printf("\n 1 - usun normalnie\n");
+				printf("\n 2 - usun rekursywnie\n");
+				if (scanf_s(" %c", &input, 1) == 0)
+					exit(1);
+				printf("\n\n");
+				if (input == '1')
+					UKWE(&L, x);
+				if (input == '2')
+					UKWE_Rekurencyjnie(&L, x);
+				printf("\n\n");
 				break;
 			case '8':
 				

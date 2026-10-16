@@ -25,4 +25,6 @@ void DodajZa(Lista W, int x);
 void DodajPrzed(Lista* L, Lista W, int x);
 
 //Usun kazde wystapienie elementu o wartosci x z listy L
-//void UKWE(Lista* L, int x);
+void UKWE(Lista* L, int x);
+
+void UKWE_Rekurencyjnie(Lista* L, int x);

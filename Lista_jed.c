@@ -104,11 +104,31 @@ void DodajPrzed(Lista* L, Lista W, int x) {
 	*L = p;
 }
 
-/*
+
 void UKWE(Lista* L, int x) {
 	Lista p;
 	p = *L;
 	while (*L) {
-		
+		if ((*L)->klucz == x) {
+			p = *L;
+			*L = (*L)->nast;
+			free(p);
+		} else {
+			L = &(*L)->nast;
+		}
 	}
-}*/
+}
+
+void UKWE_Rekurencyjnie(Lista* L, int x) {
+	Lista p;
+	if (*L) {
+		if ((*L)->klucz == x) {
+			p = *L;
+			*L = (*L)->nast;
+			free(p);
+			UKWE_Rekurencyjnie(L, x);
+		} else {
+			UKWE_Rekurencyjnie(&(*L)->nast, x);
+		}
+	}
+}
