@@ -104,7 +104,8 @@ void DodajPrzed(Lista* L, Lista W, int x) {
 	*L = p;
 }
 
-/*void UKWE(Lista* L, int x) {
+/*
+void UKWE(Lista* L, int x) {
 	Lista p;
 	p = *L;
 	while (*L) {
