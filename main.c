@@ -79,10 +79,12 @@ int main(){
 				printf("\n 2 - wyswietl odwrotnie\n");
 				if (scanf_s(" %c", &input, 1) == 0)
 					exit(1);
+				printf("\n");
 				if (input == '1')
 					WyswietlListe(L);
 				if (input == '2')
 					WyswietlListeOdwrotnie(L);
+				printf("\n\n");
 				break;
 			case '0':
 				return 0;
