@@ -1,4 +1,5 @@
-# Lab_ASD
+# Algorytmy i struktury danych 
+# Laboratorium
 
 ## Prezentacja
 [Prezentacja - Algorytmy i Struktury Danych](https://is.umk.pl/~norbert/asd/asd_wyk.pdf)
