@@ -88,6 +88,10 @@ Lista SzukajElementu(Lista L, int x) {
 }
 
 void DodajZa(Lista W, int x) {
+	if(W == NULL) {
+		printf("Nie mozna dodac elementu za NULL!\n");
+		return;
+	}
 	Lista p = (Lista)malloc(sizeof(ElL));
 	if(p == NULL) {
 		printf("Blad alokacji pamieci!\n");
@@ -99,6 +103,10 @@ void DodajZa(Lista W, int x) {
 }
 
 void DodajPrzed(Lista* L, Lista W, int x) {
+	if (W == NULL) {
+		printf("Nie mozna dodac elementu za NULL!\n");
+		return;
+	}
 	Lista p = (Lista)malloc(sizeof(ElL));
 	if(p == NULL) {
 		printf("Blad alokacji pamieci!\n");
