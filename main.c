@@ -69,10 +69,10 @@ int main(){
 				printf("\n\n");
 				break;
 			case '8':
-				
+				//TODO: implementacja wczytywania z pliku
 				break;
 			case '9':
-				
+				//TODO: implementacja zapisywania do pliku
 				break;
 			case '+':
 				printf("\n 1 - wyswietl normalnie\n");

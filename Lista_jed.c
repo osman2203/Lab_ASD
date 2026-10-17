@@ -56,12 +56,20 @@ void DNKL(Lista* L, int x) {
 }
 
 void UPeL(Lista* L) {
+	if(*L == NULL) {
+		printf("Lista jest pusta!\n");
+		return;
+	}
 	Lista p = *L;
 	*L = p->nast;
 	free(p);
 }
 
 void UOeL(Lista* L) {
+	if (*L == NULL) {
+		printf("Lista jest pusta!\n");
+		return;
+	}
 	while ((*L)->nast) {
 		L = &(*L)->nast;
 	}
