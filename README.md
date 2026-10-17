@@ -36,6 +36,9 @@
 | **25** | ⬜ Do zrobienia |
 | 26 | ⬜ Do zrobienia |
 
+**Poprawne wykonanie zadań 1, 2, 5, 6, 9, 10, 12, 14, 16, 21, 22, 25 jest wymagane do zaliczenia
+laboratorium.**
+
 ## 2. Wykład
 
 ### Prezentacja
