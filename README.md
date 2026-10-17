@@ -5,9 +5,9 @@
 ### Lista zadań
 * [Lista zadań laboratoryjnych](https://is.umk.pl/~norbert/asd/lab-zadania.pdf)
 
-## Wykład
+## 2. Wykład
 
-### 2. Prezentacja
+### Prezentacja
 * [Prezentacja - Algorytmy i Struktury Danych](https://is.umk.pl/~norbert/asd/asd_wyk.pdf)
 
 
