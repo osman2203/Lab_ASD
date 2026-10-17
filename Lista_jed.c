@@ -38,7 +38,7 @@ void WyswietlListeOdwrotnie(Lista L) {
 }
 
 void DNPL(Lista* L, int x) {
-	Lista p = (Lista)malloc(sizeof(ElL));
+	Lista p = malloc(sizeof(ElL));
 	if(p == NULL) {
 		printf("Blad alokacji pamieci!\n");
 		exit(1);
@@ -92,7 +92,7 @@ void DodajZa(Lista W, int x) {
 		printf("Nie mozna dodac elementu za NULL!\n");
 		return;
 	}
-	Lista p = (Lista)malloc(sizeof(ElL));
+	Lista p = malloc(sizeof(ElL));
 	if(p == NULL) {
 		printf("Blad alokacji pamieci!\n");
 		exit(1);
@@ -107,7 +107,7 @@ void DodajPrzed(Lista* L, Lista W, int x) {
 		printf("Nie mozna dodac elementu za NULL!\n");
 		return;
 	}
-	Lista p = (Lista)malloc(sizeof(ElL));
+	Lista p = malloc(sizeof(ElL));
 	if(p == NULL) {
 		printf("Blad alokacji pamieci!\n");
 		exit(1);
