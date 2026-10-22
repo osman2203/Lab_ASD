@@ -74,7 +74,7 @@ int main(){
 					WyswietlListeOdwrotnie(L);
 				printf("\n\n");
 				break;
-			case 'b':
+			case 'b': //Zadanie 2 - usuwanie kazdego wystapienia podanego elementu
 				printf("\n Podaj element do usuniecia: ");
 				if (scanf_s(" %d", &x) == 0)
 					exit(1);

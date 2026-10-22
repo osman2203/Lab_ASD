@@ -143,7 +143,8 @@ void UKWE(Lista* L, int x) {
 			p = *L;
 			*L = (*L)->nast;
 			free(p);
-		} else {
+		} 
+		else {
 			L = &(*L)->nast;
 		}
 	}
@@ -157,8 +158,49 @@ void UKWE_Rekurencyjnie(Lista* L, int x) {
 			*L = (*L)->nast;
 			free(p);
 			UKWE_Rekurencyjnie(L, x);
-		} else {
+		} 
+		else {
 			UKWE_Rekurencyjnie(&(*L)->nast, x);
+		}
+	}
+}
+
+void OdwrocListe(Lista* L){
+	if(*L == NULL || (*L)->nast == NULL) {
+		printf("Lista jest pusta lub zawiera tylko jeden element!\n");)
+		return;
+	}
+	Lista* a = *L, * b = a->nast, * c = b->nast;
+	a->nast = NULL;
+	if(c == NULL) {
+		b->nast = a;
+		*L = b;
+	}
+	else {
+		b->nast = a;
+		a = c->nast;
+		c->nast = b;
+		b = a->nast;
+		a->nast = c;
+		while (1) {
+			if (b == NULL) {
+				*L = a;
+				break;
+			}
+			c = b->nast;
+			b->nast = a;
+			if (c == NULL){
+				*L = b;
+				break;
+			}
+			a = c->nast;
+			c->nast = b;
+			if (a == NULL){
+				*L = c;
+				break;
+			}
+			b = a->nast;
+			a->nast = c;
 		}
 	}
 }
