@@ -165,7 +165,7 @@ void UKWE_Rekurencyjnie(Lista* L, int x) {
 	}
 }
 
-void OdwrocListe(Lista* L){
+void OdwrocListe(Lista* L){ //DO ZMIANY
 	if(*L == NULL || (*L)->nast == NULL) {
 		printf("Lista jest pusta lub zawiera tylko jeden element!\n");)
 		return;
