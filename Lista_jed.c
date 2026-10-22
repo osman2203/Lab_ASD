@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include "Lista_jed.h"
 
-typedef struct ElementListy {
-	int klucz;
-	struct ElementListy* nast;
-}ElL;
-
 void Menu() {
 	printf("\n1 - dodaj element na poczatku listy\n");
 	printf("2 - dodaj element na koncu listy\n");
@@ -17,7 +12,8 @@ void Menu() {
 	printf("7 - usun wskazany element\n");
 	printf("8 - wczytaj zawartosc listy z pliku\n");
 	printf("9 - zapisz zawartosc listy do pliku\n");
-	printf("+ - wyswietl zawartosc listy\n");
+	printf("a - wyswietl zawartosc listy\n");
+	printf("b - usun kazde wystapienie podanego elementu\n");
 	printf("0 - zakoncz dzialanie programu\n");
 	printf("Nastepna operacja: ");
 }
@@ -120,6 +116,24 @@ void DodajPrzed(Lista* L, Lista W, int x) {
 	*L = p;
 }
 
+void UWE(Lista* L, Lista* W) {
+	if (*W == NULL) {
+		printf("\nNajpierw wyszukaj element, ktory chcesz usunac!\n");
+		return;
+	}
+	while(*L != *W) {
+		L = &(*L)->nast;
+	}
+	if ((*W)->nast == NULL) {
+		free(*W);
+		*L = NULL;
+	}
+	else {
+		*L = (*W)->nast;
+		free(*W);
+	}
+	*W = NULL;
+}
 
 void UKWE(Lista* L, int x) {
 	Lista p;

@@ -1,6 +1,9 @@
 #pragma once
 
-typedef struct ElementListy ElL;
+typedef struct ElementListy {
+	int klucz;
+	struct ElementListy* nast;
+}ElL;
 
 typedef ElL* Lista;
 
@@ -23,6 +26,9 @@ Lista SzukajElementu(Lista L, int x);
 void DodajZa(Lista W, int x);
 
 void DodajPrzed(Lista* L, Lista W, int x);
+
+//Usun wskazany element z listy L (wskazany przez W)
+void UWE(Lista *L, Lista *W);
 
 //Usun kazde wystapienie elementu o wartosci x z listy L
 void UKWE(Lista* L, int x);
