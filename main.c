@@ -57,10 +57,18 @@ int main(){
 				UWE(&L, &W);
 				break;
 			case '8':
-				//TODO: implementacja wczytywania z pliku
+				char nazwaPliku[100];
+				printf("\nPodaj nazwe pliku do wczytania: ");
+				if (scanf_s("%s", nazwaPliku, (unsigned)_countof(nazwaPliku)) == 0)
+					exit(1);
+				WczytajZPliku(&L, nazwaPliku);
 				break;
 			case '9':
-				//TODO: implementacja zapisywania do pliku
+				char nazwaPliku2[100];
+				printf("\nPodaj nazwe pliku do zapisania: ");
+				if (scanf_s("%s", nazwaPliku2, (unsigned)_countof(nazwaPliku2)) == 0)
+					exit(1);
+				ZapiszDoPliku(L, nazwaPliku2);
 				break;
 			case 'a':
 				printf("\n 1 - wyswietl normalnie\n");

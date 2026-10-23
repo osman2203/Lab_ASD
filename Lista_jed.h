@@ -21,6 +21,10 @@ void UPeL(Lista* L);
 
 void UOeL(Lista* L);
 
+int WczytajZPliku(Lista* L, const char* NazwaPliku);
+
+int ZapiszDoPliku(Lista L, const char* NazwaPliku);
+
 Lista SzukajElementu(Lista L, int x);
 
 void DodajZa(Lista W, int x);

@@ -73,6 +73,35 @@ void UOeL(Lista* L) {
 	*L = NULL;
 }
 
+int WczytajZPliku(Lista* L, const char* nazwaPliku) {
+	FILE* plik = fopen(nazwaPliku, "r");
+	if (plik == NULL) {
+		printf("Blad otwarcia pliku!\n");
+		return 0;
+	}
+	
+	int x;
+	while (fscanf_s(plik, "%d", &x) == 1) {
+		DNKL(L, x);
+	}
+	fclose(plik);
+	return 1;
+}
+
+int ZapiszDoPliku(Lista L, const char* NazwaPliku) {
+	FILE* plik = fopen(NazwaPliku, "w");
+	if (plik == NULL) {
+		printf("Blad otwarcia pliku!\n");
+		return 0;
+	}
+	while (L) {
+		fprintf(plik, "%d ", L->klucz);
+		L = L->nast;
+	}
+	fclose(plik);
+	return 1;
+}
+
 Lista SzukajElementu(Lista L, int x) {
 	while (L) {
 		if (L->klucz == x)
@@ -164,7 +193,7 @@ void UKWE_Rekurencyjnie(Lista* L, int x) {
 		}
 	}
 }
-
+/*
 void OdwrocListe(Lista* L){ //DO ZMIANY
 	if(*L == NULL || (*L)->nast == NULL) {
 		printf("Lista jest pusta lub zawiera tylko jeden element!\n");)
@@ -204,3 +233,4 @@ void OdwrocListe(Lista* L){ //DO ZMIANY
 		}
 	}
 }
+*/
