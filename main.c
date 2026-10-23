@@ -54,6 +54,27 @@ int main(){
 				printf("\n\n");
 				break;
 			case '7':
+				UWE(&L, &W);
+				break;
+			case '8':
+				//TODO: implementacja wczytywania z pliku
+				break;
+			case '9':
+				//TODO: implementacja zapisywania do pliku
+				break;
+			case 'a':
+				printf("\n 1 - wyswietl normalnie\n");
+				printf("\n 2 - wyswietl odwrotnie\n");
+				if (scanf_s(" %c", &input, 1) == 0)
+					exit(1);
+				printf("\n");
+				if (input == '1')
+					WyswietlListe(L);
+				if (input == '2')
+					WyswietlListeOdwrotnie(L);
+				printf("\n\n");
+				break;
+			case 'b': //Zadanie 2 - usuwanie kazdego wystapienia podanego elementu
 				printf("\n Podaj element do usuniecia: ");
 				if (scanf_s(" %d", &x) == 0)
 					exit(1);
@@ -66,24 +87,6 @@ int main(){
 					UKWE(&L, x);
 				if (input == '2')
 					UKWE_Rekurencyjnie(&L, x);
-				printf("\n\n");
-				break;
-			case '8':
-				//TODO: implementacja wczytywania z pliku
-				break;
-			case '9':
-				//TODO: implementacja zapisywania do pliku
-				break;
-			case '+':
-				printf("\n 1 - wyswietl normalnie\n");
-				printf("\n 2 - wyswietl odwrotnie\n");
-				if (scanf_s(" %c", &input, 1) == 0)
-					exit(1);
-				printf("\n");
-				if (input == '1')
-					WyswietlListe(L);
-				if (input == '2')
-					WyswietlListeOdwrotnie(L);
 				printf("\n\n");
 				break;
 			case '0':

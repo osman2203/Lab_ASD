@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include "Lista_jed.h"
 
-typedef struct ElementListy {
-	int klucz;
-	struct ElementListy* nast;
-}ElL;
-
 void Menu() {
 	printf("\n1 - dodaj element na poczatku listy\n");
 	printf("2 - dodaj element na koncu listy\n");
@@ -17,7 +12,8 @@ void Menu() {
 	printf("7 - usun wskazany element\n");
 	printf("8 - wczytaj zawartosc listy z pliku\n");
 	printf("9 - zapisz zawartosc listy do pliku\n");
-	printf("+ - wyswietl zawartosc listy\n");
+	printf("a - wyswietl zawartosc listy\n");
+	printf("b - usun kazde wystapienie podanego elementu\n");
 	printf("0 - zakoncz dzialanie programu\n");
 	printf("Nastepna operacja: ");
 }
@@ -120,6 +116,24 @@ void DodajPrzed(Lista* L, Lista W, int x) {
 	*L = p;
 }
 
+void UWE(Lista* L, Lista* W) {
+	if (*W == NULL) {
+		printf("\nNajpierw wyszukaj element, ktory chcesz usunac!\n");
+		return;
+	}
+	while(*L != *W) {
+		L = &(*L)->nast;
+	}
+	if ((*W)->nast == NULL) {
+		free(*W);
+		*L = NULL;
+	}
+	else {
+		*L = (*W)->nast;
+		free(*W);
+	}
+	*W = NULL;
+}
 
 void UKWE(Lista* L, int x) {
 	Lista p;
@@ -129,7 +143,8 @@ void UKWE(Lista* L, int x) {
 			p = *L;
 			*L = (*L)->nast;
 			free(p);
-		} else {
+		} 
+		else {
 			L = &(*L)->nast;
 		}
 	}
@@ -143,8 +158,49 @@ void UKWE_Rekurencyjnie(Lista* L, int x) {
 			*L = (*L)->nast;
 			free(p);
 			UKWE_Rekurencyjnie(L, x);
-		} else {
+		} 
+		else {
 			UKWE_Rekurencyjnie(&(*L)->nast, x);
+		}
+	}
+}
+
+void OdwrocListe(Lista* L){ //DO ZMIANY
+	if(*L == NULL || (*L)->nast == NULL) {
+		printf("Lista jest pusta lub zawiera tylko jeden element!\n");)
+		return;
+	}
+	Lista* a = *L, * b = a->nast, * c = b->nast;
+	a->nast = NULL;
+	if(c == NULL) {
+		b->nast = a;
+		*L = b;
+	}
+	else {
+		b->nast = a;
+		a = c->nast;
+		c->nast = b;
+		b = a->nast;
+		a->nast = c;
+		while (1) {
+			if (b == NULL) {
+				*L = a;
+				break;
+			}
+			c = b->nast;
+			b->nast = a;
+			if (c == NULL){
+				*L = b;
+				break;
+			}
+			a = c->nast;
+			c->nast = b;
+			if (a == NULL){
+				*L = c;
+				break;
+			}
+			b = a->nast;
+			a->nast = c;
 		}
 	}
 }
