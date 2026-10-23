@@ -14,6 +14,7 @@ void Menu() {
 	printf("9 - zapisz zawartosc listy do pliku\n");
 	printf("a - wyswietl zawartosc listy\n");
 	printf("b - usun kazde wystapienie podanego elementu\n");
+	printf("c - odwroc liste\n");
 	printf("0 - zakoncz dzialanie programu\n");
 	printf("Nastepna operacja: ");
 }
@@ -193,44 +194,17 @@ void UKWE_Rekurencyjnie(Lista* L, int x) {
 		}
 	}
 }
-/*
-void OdwrocListe(Lista* L){ //DO ZMIANY
-	if(*L == NULL || (*L)->nast == NULL) {
-		printf("Lista jest pusta lub zawiera tylko jeden element!\n");)
-		return;
+
+void OdwrocListe(Lista* L){ 
+	Lista prev = NULL;
+	Lista current = *L;
+	Lista next = NULL;
+	while (current != NULL) {
+		next = current->nast; // Store next node
+		current->nast = prev; // Reverse current node's pointer
+		prev = current;       // Move pointers one position ahead
+		current = next;
 	}
-	Lista* a = *L, * b = a->nast, * c = b->nast;
-	a->nast = NULL;
-	if(c == NULL) {
-		b->nast = a;
-		*L = b;
-	}
-	else {
-		b->nast = a;
-		a = c->nast;
-		c->nast = b;
-		b = a->nast;
-		a->nast = c;
-		while (1) {
-			if (b == NULL) {
-				*L = a;
-				break;
-			}
-			c = b->nast;
-			b->nast = a;
-			if (c == NULL){
-				*L = b;
-				break;
-			}
-			a = c->nast;
-			c->nast = b;
-			if (a == NULL){
-				*L = c;
-				break;
-			}
-			b = a->nast;
-			a->nast = c;
-		}
-	}
+	*L = prev; // Update head to new first element
+	
 }
-*/

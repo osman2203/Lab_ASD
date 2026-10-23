@@ -13,7 +13,7 @@
 | **2** | ✅ Wykonane |
 | 3 | ⬜ Do zrobienia |
 | 4 | ⬜ Do zrobienia |
-| **5** | ⬜ Do zrobienia |
+| **5** | ✅ Wykonane |
 | **6** | ⬜ Do zrobienia |
 | 7 | ⬜ Do zrobienia |
 | 8 | ⬜ Do zrobienia |

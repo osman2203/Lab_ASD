@@ -97,6 +97,9 @@ int main(){
 					UKWE_Rekurencyjnie(&L, x);
 				printf("\n\n");
 				break;
+			case 'c':
+				OdwrocListe(&L);
+				break;
 			case '0':
 				return 0;
 			default:
