@@ -209,10 +209,11 @@ void OdwrocListe(Lista* L){
 	
 }
 
-Lista OdwrocListeRekurencyjnie(Lista* L) {
-	if ((*L)->nast) {
-		OdwrocListeRekurencyjnie(&(*L)->nast);
-		(*L)->nast->nast = *L;
-		(*L)->nast = 0;
-	}
+void OdwrocListeRekurencyjnie(Lista* L) {
+	if (*L == NULL || (*L)->nast == NULL) return;
+	Lista p = (*L)->nast;
+	OdwrocListeRekurencyjnie(&p);
+	(*L)->nast->nast = *L;
+	(*L)->nast = NULL;
+	*L = p;
 }

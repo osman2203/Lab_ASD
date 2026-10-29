@@ -5,8 +5,8 @@
 int main(){
 	char input;
 	int x;
-	Lista L = NULL, W = NULL;
-
+	ElL Wart = { INT_MAX, NULL };
+	Lista L = NULL, W = NULL, Lsort = &Wart;
 	do{
 		Menu();
 
@@ -98,7 +98,16 @@ int main(){
 				printf("\n\n");
 				break;
 			case 'c':
-				OdwrocListe(&L);
+				printf("\n 1 - odwroc normalnie\n");
+				printf("\n 2 - odwroc rekursywnie\n");
+				if (scanf_s(" %c", &input, 1) == 0)
+					exit(1);
+				printf("\n\n");
+				if (input == '1')
+					OdwrocListe(&L);
+				if (input == '2')
+					OdwrocListeRekurencyjnie(&L, &L);
+				printf("\n\n");
 				break;
 			case '0':
 				return 0;
