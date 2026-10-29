@@ -5,8 +5,7 @@
 int main(){
 	char input;
 	int x;
-	ElL Wart = { INT_MAX, NULL };
-	Lista L = NULL, W = NULL, Lsort = &Wart;
+	Lista L = NULL, W = NULL;
 	do{
 		Menu();
 
@@ -97,7 +96,7 @@ int main(){
 					UKWE_Rekurencyjnie(&L, x);
 				printf("\n\n");
 				break;
-			case 'c':
+			case 'c': //Zadanie 5 - odwracanie listy iteracyjnie i rekurencyjnie
 				printf("\n 1 - odwroc normalnie\n");
 				printf("\n 2 - odwroc rekursywnie\n");
 				if (scanf_s(" %c", &input, 1) == 0)
