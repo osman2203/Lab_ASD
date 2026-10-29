@@ -200,11 +200,11 @@ void OdwrocListe(Lista* L){
 	Lista current = *L;
 	Lista next = NULL;
 	while (current != NULL) {
-		next = current->nast; // Store next node
-		current->nast = prev; // Reverse current node's pointer
-		prev = current;       // Move pointers one position ahead
+		next = current->nast; 
+		current->nast = prev; 
+		prev = current;       
 		current = next;
 	}
-	*L = prev; // Update head to new first element
+	*L = prev; 
 	
 }
