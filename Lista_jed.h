@@ -40,3 +40,5 @@ void UKWE(Lista* L, int x);
 void UKWE_Rekurencyjnie(Lista* L, int x);
 
 void OdwrocListe(Lista* L);
+
+void OdwrocListeRekurencyjnie(Lista* L);

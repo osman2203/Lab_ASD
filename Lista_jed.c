@@ -208,3 +208,11 @@ void OdwrocListe(Lista* L){
 	*L = prev; 
 	
 }
+
+Lista OdwrocListeRekurencyjnie(Lista* L) {
+	if ((*L)->nast) {
+		OdwrocListeRekurencyjnie(&(*L)->nast);
+		(*L)->nast->nast = *L;
+		(*L)->nast = 0;
+	}
+}
